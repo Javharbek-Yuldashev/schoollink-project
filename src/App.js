@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import { ThemeProvider } from '@mui/material';
+
 import './App.css';
+import theme from './constants/theme';
+
+import Courses from './container/Courses';
+import Footer from './container/Footer';
+import Header from './container/Header';
+import Navbar from './container/Navbar';
+import Subscribe from './container/Subscribe';
+import Team from './container/Team';
+import Testimonal from './container/Testimonal';
+import University from './container/University';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Navbar />
+        <Header />
+        <Courses />
+        <Team />
+        <University />
+        <Testimonal />
+        <Subscribe />
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 
